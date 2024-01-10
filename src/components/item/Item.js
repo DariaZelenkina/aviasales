@@ -3,8 +3,8 @@ import { addMinutes, getHours, getMinutes } from "date-fns";
 import styles from "./Item.module.scss";
 
 function toHoursAndMinutes(totalMinutes) {
-  const minutes = totalMinutes % 60;
-  const hours = Math.floor(totalMinutes / 60);
+  const minutes = (totalMinutes % 60).toString().padStart(2, '0');
+  const hours = Math.floor(totalMinutes / 60).toString().padStart(2, '0');
   const result = `${hours}ч ${minutes}м`;
   return result;
 }
@@ -12,8 +12,12 @@ function toHoursAndMinutes(totalMinutes) {
 function getTimeInterval(startDate, duration) {
   const startTime = new Date(startDate);
   const endTime = addMinutes(startTime, duration);
-  const result = `${getHours(startTime)}:${getMinutes(startTime)} - ${getHours(endTime)}:${getMinutes(endTime)}`;
-  return result;
+  const startHours = getHours(startTime).toString().padStart(2, '0');
+  const startMinutes = getMinutes(startTime).toString().padStart(2, '0');
+  const endHours = getHours(endTime).toString().padStart(2, '0');
+  const endMinutes = getMinutes(endTime).toString().padStart(2, '0');
+
+  return `${startHours}:${startMinutes} - ${endHours}:${endMinutes}`;
 }
 
 function formatStopsTitle(numOfStops) {
