@@ -1,0 +1,57 @@
+.card {
+  box-sizing: border-box;
+  width: 502px;
+  height: 184px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  width: 462px;
+  height: 36px;
+  justify-content: space-between;
+
+  .price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgba(33, 150, 243, 1);
+  }
+
+  img {
+    width: 110px;
+  }
+}
+
+.flightInfo {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: rgba(74, 74, 74, 1);
+
+  .title {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    color: rgba(160, 176, 185, 1);
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 141px;
+  }
+}
